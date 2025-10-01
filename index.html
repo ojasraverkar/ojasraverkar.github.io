@@ -3,59 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ojas Sameer Raverkar | Portfolio</title>
+    <title>Ojas Raverkar | Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        /* NEW: White, Black, Yellow, Blue Theme */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e2e8f0;
+            background-color: #ffffff; 
+            color: #111827; /* Nearly Black Text */
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+        ::-webkit-scrollbar-track { background: #e5e7eb; }
+        /* NEW: Blue scrollbar */
+        ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
 
         /* Typing cursor */
-        .typed-cursor { opacity: 1; animation: blink 0.7s infinite; }
+        .typed-cursor { opacity: 1; animation: blink 0.7s infinite; color: #facc15; } /* Yellow */
         @keyframes blink { 50% { opacity: 0; } }
 
         /* Reveal on scroll */
         .reveal { transform: translateY(100px); opacity: 0; transition: 1s all ease; }
         .reveal.active { transform: translateY(0); opacity: 1; }
-
-        /* Animated Gradient Background */
-        .animated-gradient {
-            background: linear-gradient(-45deg, #0a0a0a, #1e3a8a, #0a0a0a, #4f46e5);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1;
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        
+        /* Constellation Canvas Style */
+        #constellation-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-color: #ffffff;
         }
 
-        /* NEW: Glassmorphism and Glow Effect for cards */
+        /* Glassmorphism for Light Theme */
         .glass-card {
-            background: rgba(17, 24, 39, 0.5); /* Semi-transparent dark bg */
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .glass-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 0 25px rgba(79, 70, 229, 0.5); /* Indigo glow */
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
         }
         
-        /* NEW: Scroll-to-top button */
         #scrollTopBtn {
             position: fixed;
             bottom: 20px;
@@ -64,41 +64,52 @@
             z-index: 100;
             transition: opacity 0.3s, visibility 0.3s;
         }
+        
+        /* NEW: Animated Gradient Text Logo with new colors */
+        .animated-logo {
+            font-weight: 700;
+            font-size: 1.75rem; /* Slightly larger */
+            background: linear-gradient(90deg, #facc15, #2563eb, #facc15, #2563eb);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 5s linear infinite;
+        }
+        @keyframes gradient-text {
+            to { background-position: 300% center; }
+        }
+
     </style>
 </head>
 <body class="overflow-x-hidden">
 
     <!-- Header & Navigation -->
-    <header class="bg-black/60 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+    <header class="bg-white/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-200/80">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- NEW: SVG Logo -->
-            <a href="#" class="text-white">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M10 8.5C10 8.5 10.5 9 11 10C11.5 11 12.5 12 12.5 12C12.5 12 13.5 11 14 10C14.5 9 15 8.5 15 8.5" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8.5 15.5C8.5 15.5 9.5 15 10.5 14C11.5 13 12.5 12 12.5 12C12.5 12 13.5 13 14.5 14C15.5 15 16.5 15.5 16.5 15.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+             <!-- NEW: Updated logo text */ -->
+            <a href="#" class="animated-logo">
+                Ojas
             </a>
             <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-slate-300 hover:text-indigo-400 transition duration-300">About</a>
-                <a href="#skills" class="text-slate-300 hover:text-indigo-400 transition duration-300">Skills</a>
-                <a href="#certs" class="text-slate-300 hover:text-indigo-400 transition duration-300">Certs</a>
-                <a href="#projects" class="text-slate-300 hover:text-indigo-400 transition duration-300">Projects</a>
-                <a href="#experience" class="text-slate-300 hover:text-indigo-400 transition duration-300">Experience</a>
-                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Contact</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300">Skills</a>
+                <a href="#certs" class="text-gray-600 hover:text-blue-600 transition duration-300">Certs</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-300">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
+                <a href="#contact" class="bg-gray-900 hover:bg-black text-white font-medium py-2 px-4 rounded-lg transition duration-300">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <button id="mobile-menu-button" class="md:hidden text-gray-900">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black/80">
-            <a href="#about" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">About</a>
-            <a href="#skills" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Skills</a>
-            <a href="#certs" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Certs</a>
-            <a href="#projects" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Projects</a>
-            <a href="#experience" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Experience</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95">
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600">About</a>
+            <a href="#skills" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600">Skills</a>
+            <a href="#certs" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600">Certs</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600">Projects</a>
+            <a href="#experience" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600">Experience</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-600">Contact</a>
         </div>
     </header>
 
@@ -106,100 +117,94 @@
 
         <!-- Hero Section -->
         <section id="home" class="min-h-screen flex items-center justify-center text-center relative">
-            <div class="animated-gradient"></div>
+            <canvas id="constellation-canvas"></canvas>
             <div class="max-w-4xl z-10">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-4">
                     Hi, I'm Ojas Sameer Raverkar
                 </h1>
-                <h2 class="text-2xl md:text-3xl font-semibold text-indigo-300 mb-8">
+                <h2 class="text-2xl md:text-3xl font-semibold text-yellow-500 mb-8">
                     <span id="typed-text"></span><span class="typed-cursor">|</span>
                 </h2>
-                <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
                     A Mechanical Engineering student passionate about applying AI and quantitative analysis to solve complex problems in financial markets.
                 </p>
                 <div class="flex justify-center items-center space-x-6">
-                    <a href="https://github.com/ojasraverkar" target="_blank" class="text-slate-300 hover:text-white transition duration-300"><i data-lucide="github" class="w-8 h-8"></i></a>
-                    <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-slate-300 hover:text-white transition duration-300"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
-                    <a href="mailto:ojas12062006@gmail.com" class="text-slate-300 hover:text-white transition duration-300"><i data-lucide="mail" class="w-8 h-8"></i></a>
+                    <a href="https://github.com/ojasraverkar" target="_blank" class="text-gray-500 hover:text-gray-900 transition duration-300"><i data-lucide="github" class="w-8 h-8"></i></a>
+                    <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-gray-500 hover:text-gray-900 transition duration-300"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+                    <a href="mailto:ojas12062006@gmail.com" class="text-gray-500 hover:text-gray-900 transition duration-300"><i data-lucide="mail" class="w-8 h-8"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
         <section id="about" class="py-20 lg:py-32 reveal">
-            <div class="grid md:grid-cols-5 gap-10 items-center">
-                <div class="md:col-span-2">
-                     <!-- IMPORTANT: This is where you will add your photo link. See the guide for instructions. -->
-                     <img id="profile-photo" src="https://raw.githubusercontent.com/ojasraverkar/ojasraverkar.github.io/main/profile.jpg" alt="Ojas Raverkar Profile Picture" class="rounded-lg shadow-2xl shadow-indigo-500/10 w-full">
-                </div>
-                <div class="md:col-span-3">
-                    <h2 class="text-3xl font-bold text-white mb-4">About Me</h2>
-                    <p class="text-slate-400 mb-4">
-                        I'm a second-year B.Tech Mechanical Engineering student at VIT, minoring in AI & Machine Learning. I am driven by a fascination with financial markets and a passion for using mathematical models and machine learning to find signals in the noise.
-                    </p>
-                    <p class="text-slate-400 mb-6">
-                        My objective is to build a career as a Quantitative Researcher or Investment Manager. I am actively developing my skills in statistical analysis, algorithmic trading, and computational finance to create innovative, data-driven solutions in the FinTech space.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="bg-slate-800 p-4 rounded-lg flex-1 text-center">
-                            <h4 class="text-indigo-400 text-2xl font-bold">B.Tech</h4>
-                            <p class="text-sm text-slate-300">VIT, Vellore</p>
-                        </div>
-                        <div class="bg-slate-800 p-4 rounded-lg flex-1 text-center">
-                            <h4 class="text-indigo-400 text-2xl font-bold">AI/ML</h4>
-                            <p class="text-sm text-slate-300">Minor Degree</p>
-                        </div>
-                         <div class="bg-slate-800 p-4 rounded-lg flex-1 text-center">
-                            <h4 class="text-indigo-400 text-2xl font-bold">2028</h4>
-                            <p class="text-sm text-slate-300">Expected Graduation</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="max-w-3xl mx-auto text-center">
+                 <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+                 <p class="text-gray-600 mb-4">
+                     I'm a second-year B.Tech Mechanical Engineering student at VIT, minoring in AI & Machine Learning. I am driven by a fascination with financial markets and a passion for using mathematical models and machine learning to find signals in the noise.
+                 </p>
+                 <p class="text-gray-600 mb-8">
+                     My objective is to build a career as a Quantitative Researcher or Investment Manager. I am actively developing my skills in statistical analysis, algorithmic trading, and computational finance to create innovative, data-driven solutions in the FinTech space.
+                 </p>
+                 <div class="flex flex-wrap gap-4 justify-center">
+                     <div class="bg-gray-100 border border-gray-200 p-4 rounded-lg flex-1 min-w-[150px] text-center">
+                         <h4 class="text-gray-800 text-2xl font-bold">B.Tech</h4>
+                         <p class="text-sm text-gray-500">VIT, Vellore</p>
+                     </div>
+                     <div class="bg-gray-100 border border-gray-200 p-4 rounded-lg flex-1 min-w-[150px] text-center">
+                         <h4 class="text-blue-600 text-2xl font-bold">AI/ML</h4>
+                         <p class="text-sm text-gray-500">Minor Degree</p>
+                     </div>
+                      <div class="bg-gray-100 border border-gray-200 p-4 rounded-lg flex-1 min-w-[150px] text-center">
+                         <h4 class="text-gray-800 text-2xl font-bold">2028</h4>
+                         <p class="text-sm text-gray-500">Expected Graduation</p>
+                     </div>
+                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 lg:py-32 reveal">
+        <section id="skills" class="py-20 lg:py-32 reveal bg-gray-50 rounded-3xl">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white">Technical Toolkit</h2>
-                <p class="text-slate-400 mt-2">The languages, tools, and skills I use to build things.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Technical Toolkit</h2>
+                <p class="text-gray-600 mt-2">The languages, tools, and skills I use to build things.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="glass-card p-6 rounded-lg lg:col-span-3">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="trending-up" class="w-8 h-8 text-indigo-400"></i><h3 class="text-xl font-semibold text-white">Financial & Quantitative Skills</h3></div>
+                    <div class="flex items-center gap-4 mb-4"><i data-lucide="trending-up" class="w-8 h-8 text-yellow-500"></i><h3 class="text-xl font-semibold text-gray-900">Financial & Quantitative Skills</h3></div>
                      <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Algorithmic Trading</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Quantitative Analysis</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Financial Modeling</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Monte Carlo Simulation</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Technical & Fundamental Analysis</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">API Integration (Kite Connect)</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Algorithmic Trading</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Quantitative Analysis</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Financial Modeling</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Monte Carlo Simulation</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Technical & Fundamental Analysis</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">API Integration (Kite Connect)</span>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="code-2" class="w-8 h-8 text-indigo-400"></i><h3 class="text-xl font-semibold text-white">Programming Languages</h3></div>
+                    <div class="flex items-center gap-4 mb-4"><i data-lucide="code-2" class="w-8 h-8 text-blue-600"></i><h3 class="text-xl font-semibold text-gray-900">Programming Languages</h3></div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Python (Proficient)</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">C++ (Intermediate)</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Java (Intermediate)</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">HTML (Beginner)</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Matlab (Beginner)</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Python (Proficient)</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">C++ (Intermediate)</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Java (Intermediate)</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">HTML (Beginner)</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Matlab (Beginner)</span>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-lg">
-                     <div class="flex items-center gap-4 mb-4"><i data-lucide="pencil-ruler" class="w-8 h-8 text-indigo-400"></i><h3 class="text-xl font-semibold text-white">Engineering Design</h3></div>
+                     <div class="flex items-center gap-4 mb-4"><i data-lucide="pencil-ruler" class="w-8 h-8 text-yellow-500"></i><h3 class="text-xl font-semibold text-gray-900">Engineering Design</h3></div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Inventor</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Solidworks</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">AutoCAD</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Inventor</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Solidworks</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">AutoCAD</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="database" class="w-8 h-8 text-indigo-400"></i><h3 class="text-xl font-semibold text-white">Databases</h3></div>
+                    <div class="flex items-center gap-4 mb-4"><i data-lucide="database" class="w-8 h-8 text-blue-600"></i><h3 class="text-xl font-semibold text-gray-900">Databases</h3></div>
                      <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">MySQL</span>
-                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium px-3 py-1 rounded-full">MongoDB</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">MySQL</span>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">MongoDB</span>
                     </div>
                 </div>
             </div>
@@ -208,22 +213,22 @@
         <!-- Certifications Section -->
         <section id="certs" class="py-20 lg:py-32 reveal">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white">Certifications & Coursework</h2>
-                <p class="text-slate-400 mt-2">My commitment to continuous learning.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Certifications & Coursework</h2>
+                <p class="text-gray-600 mt-2">My commitment to continuous learning.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="glass-card p-6 rounded-lg flex items-start gap-4">
-                    <i data-lucide="award" class="w-10 h-10 text-indigo-400 mt-1 flex-shrink-0"></i>
+                    <i data-lucide="award" class="w-10 h-10 text-blue-600 mt-1 flex-shrink-0"></i>
                     <div>
-                        <h3 class="text-lg font-semibold text-white">Financial Markets</h3>
-                        <p class="text-indigo-400 text-sm">Yale University (via Coursera)</p>
+                        <h3 class="text-lg font-semibold text-gray-900">Financial Markets</h3>
+                        <p class="text-blue-600 text-sm">Yale University (via Coursera)</p>
                     </div>
                 </div>
                 <div class="glass-card p-6 rounded-lg flex items-start gap-4">
-                    <i data-lucide="award" class="w-10 h-10 text-indigo-400 mt-1 flex-shrink-0"></i>
+                    <i data-lucide="award" class="w-10 h-10 text-yellow-500 mt-1 flex-shrink-0"></i>
                     <div>
-                        <h3 class="text-lg font-semibold text-white">Mathematics for Machine Learning</h3>
-                        <p class="text-indigo-400 text-sm">Specialization (via Coursera)</p>
+                        <h3 class="text-lg font-semibold text-gray-900">Mathematics for Machine Learning</h3>
+                        <p class="text-yellow-500 text-sm">Specialization (via Coursera)</p>
                     </div>
                 </div>
             </div>
@@ -231,57 +236,57 @@
 
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 lg:py-32 reveal">
+        <section id="projects" class="py-20 lg:py-32 reveal bg-gray-50 rounded-3xl">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white">My Projects</h2>
-                <p class="text-slate-400 mt-2">Applying theory to build practical solutions.</p>
+                <h2 class="text-3xl font-bold text-gray-900">My Projects</h2>
+                <p class="text-gray-600 mt-2">Applying theory to build practical solutions.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="glass-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-white mb-2">Portfolio Optimization Using Monte Carlo Simulation</h3>
-                        <p class="text-slate-400 text-sm mb-4">Developed a model to find the optimal risk-return tradeoff for a portfolio of assets, applying Modern Portfolio Theory concepts like the Sharpe Ratio.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portfolio Optimization Using Monte Carlo Simulation</h3>
+                        <p class="text-gray-600 text-sm mb-4">Developed a model to find the optimal risk-return tradeoff for a portfolio of assets, applying Modern Portfolio Theory concepts like the Sharpe Ratio.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Monte Carlo</span>
-                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Finance</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Monte Carlo</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Finance</span>
                         </div>
                     </div>
-                    <div class="p-4 bg-slate-900/50 mt-auto">
-                        <a href="https://github.com/ojasraverkar" target="_blank" class="text-indigo-400 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                    <div class="p-4 bg-gray-100/50 mt-auto">
+                        <a href="https://github.com/ojasraverkar" target="_blank" class="text-blue-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300">
                             View on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
                 <div class="glass-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-white mb-2">Financial Sentiment Analysis</h3>
-                        <p class="text-slate-400 text-sm mb-4">Built and trained a sentiment analysis model using a fine-tuned Prosus FinBERT transformer on a custom-labeled dataset of Indian financial news headlines.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Financial Sentiment Analysis</h3>
+                        <p class="text-gray-600 text-sm mb-4">Built and trained a sentiment analysis model using a fine-tuned Prosus FinBERT transformer on a custom-labeled dataset of Indian financial news headlines.</p>
                         <div class="flex flex-wrap gap-2">
-                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">FinBERT</span>
-                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">NLP</span>
-                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">AI/ML</span>
+                           <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                           <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">FinBERT</span>
+                           <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">NLP</span>
+                           <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AI/ML</span>
                         </div>
                     </div>
-                    <div class="p-4 bg-slate-900/50 mt-auto">
-                         <a href="https://github.com/ojasraverkar" target="_blank" class="text-indigo-400 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                    <div class="p-4 bg-gray-100/50 mt-auto">
+                         <a href="https://github.com/ojasraverkar" target="_blank" class="text-yellow-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300">
                             View on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
                 </div>
                 <div class="glass-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-white mb-2">Automated Trading Algorithms</h3>
-                        <p class="text-slate-400 text-sm mb-4">Engineered a Python-based automated trading system using the Kite Connect API, capable of real-time data processing and programmatic trade execution.</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Automated Trading Algorithms</h3>
+                        <p class="text-gray-600 text-sm mb-4">Engineered a Python-based automated trading system using the Kite Connect API, capable of real-time data processing and programmatic trade execution.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">API</span>
-                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Algo-Trading</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">API</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Algo-Trading</span>
                         </div>
                     </div>
-                    <div class="p-4 bg-slate-900/50 mt-auto">
-                         <a href="https://github.com/ojasraverkar" target="_blank" class="text-indigo-400 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                    <div class="p-4 bg-gray-100/50 mt-auto">
+                         <a href="https://github.com/ojasraverkar" target="_blank" class="text-blue-600 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-300">
                             View on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -292,15 +297,15 @@
         <!-- Experience Section -->
         <section id="experience" class="py-20 lg:py-32 reveal">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white">Professional Experience</h2>
-                 <p class="text-slate-400 mt-2">My professional journey so far.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Professional Experience</h2>
+                 <p class="text-gray-600 mt-2">My professional journey so far.</p>
             </div>
-            <div class="relative border-l-2 border-indigo-500/30 ml-6 max-w-2xl mx-auto">
+            <div class="relative border-l-2 border-yellow-300 ml-6 max-w-2xl mx-auto">
                 <div class="mb-10 ml-10">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-4 ring-8 ring-slate-900/80"><i data-lucide="briefcase" class="w-5 h-5 text-white"></i></span>
-                    <h3 class="flex items-center mb-1 text-lg font-semibold text-white">Summer Intern @ SIDTECH Engineering</h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-indigo-400">May 2025 - June 2025</time>
-                    <ul class="mb-4 text-base font-normal text-slate-400 list-disc pl-5 space-y-2">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full -left-4 ring-8 ring-white"><i data-lucide="briefcase" class="w-5 h-5 text-gray-800"></i></span>
+                    <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">Summer Intern @ SIDTECH Engineering</h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-yellow-500">May 2025 - June 2025</time>
+                    <ul class="mb-4 text-base font-normal text-gray-600 list-disc pl-5 space-y-2">
                         <li>Designed and developed components for Special Purpose Machines (SPM) using Autodesk Inventor and AutoCAD.</li>
                         <li>Participated in end-to-end project execution for machinery, managing Bill of Materials (BOM) and vendor coordination.</li>
                         <li>Collaborated with cross-functional teams to streamline manufacturing workflows and improve processes.</li>
@@ -310,32 +315,31 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 lg:py-32 text-center reveal">
-             <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
-             <p class="text-slate-400 mt-4 max-w-xl mx-auto">
+        <section id="contact" class="py-20 lg:py-32 text-center reveal bg-gray-50 rounded-3xl">
+             <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
+             <p class="text-gray-600 mt-4 max-w-xl mx-auto">
                  I'm actively seeking quantitative research and trading internships. If you're looking for a dedicated and analytical team member, I'd love to connect. My inbox is always open!
              </p>
              <div class="mt-8">
-                 <a href="mailto:ojas12062006@gmail.com" class="inline-block bg-indigo-600 text-white font-medium text-lg px-8 py-4 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg shadow-indigo-500/20">Say Hello</a>
+                 <a href="mailto:ojas12062006@gmail.com" class="inline-block bg-blue-600 text-white font-medium text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg shadow-blue-500/20">Say Hello</a>
              </div>
         </section>
 
     </main>
     
     <!-- Footer -->
-    <footer class="bg-slate-900/50 border-t border-slate-800">
-        <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+    <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
             <div class="flex justify-center items-center space-x-6 mb-4">
-                <a href="https://github.com/ojasraverkar" target="_blank" class="text-slate-400 hover:text-white transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
-                <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-slate-400 hover:text-white transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <a href="mailto:ojas12062006@gmail.com" class="text-slate-400 hover:text-white transition duration-300"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                <a href="https://github.com/ojasraverkar" target="_blank" class="text-gray-500 hover:text-gray-900 transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-gray-500 hover:text-gray-900 transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="mailto:ojas12062006@gmail.com" class="text-gray-500 hover:text-gray-900 transition duration-300"><i data-lucide="mail" class="w-6 h-6"></i></a>
             </div>
             <p>&copy; <span id="year"></span> Ojas Sameer Raverkar. All rights reserved.</p>
         </div>
     </footer>
     
-    <!-- NEW: Scroll to Top Button -->
-    <button id="scrollTopBtn" onclick="scrollToTop()" class="bg-indigo-600 text-white rounded-full p-3 hover:bg-indigo-700 transition duration-300 shadow-lg">
+    <button id="scrollTopBtn" onclick="scrollToTop()" class="bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition duration-300 shadow-lg">
         <i data-lucide="arrow-up" class="w-6 h-6"></i>
     </button>
 
@@ -400,10 +404,115 @@
         function scrollToTop() {
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
+
+        // Constellation Animation Logic
+        const canvas = document.getElementById('constellation-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+
+        // Mouse position
+        const mouse = { x: null, y: null, radius: (canvas.height/120) * (canvas.width/120) };
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        // Particle class
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = '#4b5563'; // gray-600
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) { this.directionX = -this.directionX; }
+                if (this.y > canvas.height || this.y < 0) { this.directionY = -this.directionY; }
+                
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                if (distance < mouse.radius + this.size){
+                    if(mouse.x < this.x && this.x < canvas.width - this.size * 10) { this.x += 5; }
+                    if(mouse.x > this.x && this.x > this.size * 10) { this.x -= 5; }
+                    if(mouse.y < this.y && this.y < canvas.height - this.size * 10) { this.y += 5; }
+                    if(mouse.y > this.y && this.y > this.size * 10) { this.y -= 5; }
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        // Create particle array
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.getElementById('home').offsetHeight;
+            mouse.radius = (canvas.height/100) * (canvas.width/100);
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i=0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * .4) - 0.2;
+                let directionY = (Math.random() * .4) - 0.2;
+                let color = '#a1a1aa';
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0,0,innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        // Connect particles
+        function connect(){
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                    + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        opacityValue = 1 - (distance/20000);
+                        // NEW: Blue lines
+                        ctx.strokeStyle = `rgba(37, 99, 235, ${opacityValue})`; // blue-600 with opacity
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Resize event
+        window.addEventListener('resize', function(){
+            init();
+        });
+        
+        // Initial setup
+        init();
+        animate();
+
     </script>
 
 </body>
 </html>
-
-
 
