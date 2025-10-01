@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ojas Sameer Raverkar | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+        /* Style for the typing cursor */
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* Animation for elements fading in on scroll */
+        .reveal {
+            position: relative;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: 1s all ease;
+        }
+        .reveal.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black/60 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider">
+                O<span class="text-indigo-500">.</span>R<span class="text-indigo-500">.</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-slate-300 hover:text-indigo-400 transition duration-300">About</a>
+                <a href="#skills" class="text-slate-300 hover:text-indigo-400 transition duration-300">Skills</a>
+                <a href="#projects" class="text-slate-300 hover:text-indigo-400 transition duration-300">Projects</a>
+                <a href="#experience" class="text-slate-300 hover:text-indigo-400 transition duration-300">Experience</a>
+                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/80">
+            <a href="#about" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">About</a>
+            <a href="#skills" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Projects</a>
+            <a href="#experience" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Experience</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-slate-300 hover:bg-indigo-500 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
+                    Hi, I'm Ojas Sameer Raverkar
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-indigo-400 mb-8">
+                    <span id="typed-text"></span><span class="typed-cursor">|</span>
+                </h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
+                    A Mechanical Engineering student at VIT Vellore with a passion for AI, Machine Learning, and their application in the world of FinTech.
+                </p>
+                <div class="flex justify-center items-center space-x-6">
+                    <a href="https://github.com/ojasraverkar" target="_blank" class="text-slate-400 hover:text-white transition duration-300">
+                        <i data-lucide="github" class="w-8 h-8"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-slate-400 hover:text-white transition duration-300">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </a>
+                    <a href="mailto:ojas12062006@gmail.com" class="text-slate-400 hover:text-white transition duration-300">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32 reveal">
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-2">
+                     <img src="https://placehold.co/600x600/111827/4f46e5?text=Ojas+R." alt="Ojas Raverkar Profile Picture" class="rounded-lg shadow-2xl shadow-indigo-500/10 w-full">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="text-3xl font-bold text-white mb-4">About Me</h2>
+                    <p class="text-slate-400 mb-4">
+                        I'm a second-year B.Tech Mechanical Engineering student at Vellore Institute of Technology, minoring in Artificial Intelligence and Machine Learning. I'm deeply enthusiastic about leveraging technology to solve complex problems, particularly at the intersection of engineering and finance.
+                    </p>
+                    <p class="text-slate-400 mb-6">
+                        My goal is to apply my skills in quantitative analysis, algorithmic trading, and AI to contribute to cutting-edge research and develop innovative FinTech solutions. I am a dedicated problem-solver, a quick learner, and I thrive in collaborative environments where I can help teams achieve their goals.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-slate-800 p-4 rounded-lg flex-1 text-center">
+                            <h4 class="text-indigo-400 text-2xl font-bold">B.Tech</h4>
+                            <p class="text-sm text-slate-300">VIT, Vellore</p>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg flex-1 text-center">
+                            <h4 class="text-indigo-400 text-2xl font-bold">AI/ML</h4>
+                            <p class="text-sm text-slate-300">Minor Degree</p>
+                        </div>
+                         <div class="bg-slate-800 p-4 rounded-lg flex-1 text-center">
+                            <h4 class="text-indigo-400 text-2xl font-bold">2028</h4>
+                            <p class="text-sm text-slate-300">Expected Graduation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 lg:py-32 reveal">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Technical Skills</h2>
+                <p class="text-slate-400 mt-2">A glimpse into my technical toolkit.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-lg">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="code-2" class="w-8 h-8 text-indigo-400"></i>
+                        <h3 class="text-xl font-semibold text-white">Programming Languages</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Python (Proficient)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">C++ (Intermediate)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Java (Intermediate)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">HTML (Beginner)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Matlab (Beginner)</span>
+                    </div>
+                </div>
+                <!-- Designing Tools -->
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-lg">
+                     <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="pencil-ruler" class="w-8 h-8 text-indigo-400"></i>
+                        <h3 class="text-xl font-semibold text-white">Designing Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Inventor (Proficient)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Solidworks (Intermediate)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">AutoCAD (Beginner)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Fusion 360 (Beginner)</span>
+                    </div>
+                </div>
+                <!-- Databases -->
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-lg">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="database" class="w-8 h-8 text-indigo-400"></i>
+                        <h3 class="text-xl font-semibold text-white">Databases</h3>
+                    </div>
+                     <div class="space-y-3">
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">MySQL (Intermediate)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">MongoDB (Beginner)</span>
+                    </div>
+                </div>
+                 <!-- Financial Skills -->
+                <div class="bg-slate-900/50 border border-slate-800 p-6 rounded-lg md:col-span-2 lg:col-span-3">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-indigo-400"></i>
+                        <h3 class="text-xl font-semibold text-white">Financial & Quantitative Skills</h3>
+                    </div>
+                     <div class="space-y-3">
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Equity Fundamentals</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Financial Markets</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">API Integration (Kite Connect)</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Technical & Fundamental Analysis</span>
+                        <span class="inline-block bg-slate-800 text-slate-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-full">Automated Trading Algorithms</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 lg:py-32 reveal">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">My Projects</h2>
+                <p class="text-slate-400 mt-2">Here are some of the projects I've worked on.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-900/50 border border-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Portfolio Optimization Using Monte Carlo Simulation</h3>
+                        <p class="text-slate-400 text-sm mb-4">Developed a sophisticated portfolio optimization model using Monte Carlo methods to find the optimal risk-return tradeoff based on Modern Portfolio Theory.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Monte Carlo</span>
+                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Finance</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-slate-900/50 border border-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Financial Sentiment Analysis</h3>
+                        <p class="text-slate-400 text-sm mb-4">Built a sentiment analysis system using a fine-tuned Prosus FinBERT model, trained on a custom-labeled dataset of Indian financial news headlines to predict market sentiment.</p>
+                        <div class="flex flex-wrap gap-2">
+                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">FinBERT</span>
+                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">NLP</span>
+                           <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-slate-900/50 border border-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Automated Trading Algorithms</h3>
+                        <p class="text-slate-400 text-sm mb-4">Developed a Python-based automated trading system using the Kite Connect API. This system is capable of real-time data processing and trade execution.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">API</span>
+                            <span class="bg-indigo-600/20 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Algo-Trading</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 lg:py-32 reveal">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">Professional Experience</h2>
+                 <p class="text-slate-400 mt-2">My professional journey so far.</p>
+            </div>
+            <div class="relative border-l-2 border-indigo-500/30 ml-6">
+                <!-- Timeline Item -->
+                <div class="mb-10 ml-10">
+                    <span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-4 ring-8 ring-slate-900">
+                        <i data-lucide="briefcase" class="w-5 h-5 text-white"></i>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-lg font-semibold text-white">
+                        Summer Intern @ SIDTECH Engineering
+                    </h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-indigo-400">May 2025 - June 2025</time>
+                    <ul class="mb-4 text-base font-normal text-slate-400 list-disc pl-5 space-y-2">
+                        <li>Designed and developed components for Special Purpose Machines (SPM) using Autodesk Inventor and AutoCAD.</li>
+                        <li>Participated in end-to-end project execution for machinery, managing Bill of Materials (BOM) and vendor coordination.</li>
+                        <li>Collaborated with cross-functional teams to streamline manufacturing workflows and improve processes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-32 text-center reveal">
+             <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
+             <p class="text-slate-400 mt-4 max-w-xl mx-auto">
+                 I'm currently seeking internship and fellowship opportunities where I can apply my skills and continue to learn. My inbox is always open, whether you have a question or just want to say hi, I'll try my best to get back to you!
+             </p>
+             <div class="mt-8">
+                 <a href="mailto:ojas12062006@gmail.com" class="inline-block bg-indigo-600 text-white font-medium text-lg px-8 py-4 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg shadow-indigo-500/20">
+                     Say Hello
+                 </a>
+             </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-400">
+            <div class="flex justify-center items-center space-x-6 mb-4">
+                <a href="https://github.com/ojasraverkar" target="_blank" class="text-slate-400 hover:text-white transition duration-300">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-slate-400 hover:text-white transition duration-300">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:ojas12062006@gmail.com" class="text-slate-400 hover:text-white transition duration-300">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p>&copy; <span id="year"></span> Ojas Sameer Raverkar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typing effect
+        const typedTextSpan = document.getElementById("typed-text");
+        const textArray = ["Mechanical Engineer", "AI & ML Enthusiast", "Aspiring Quant Researcher"];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 2000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+        
+        // Reveal elements on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // To reveal elements already in view on load
+        reveal();
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
