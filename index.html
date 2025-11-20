@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ojas Raverkar | Portfolio</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -10,535 +10,485 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Ojas Raverkar — Aspiring Quant Researcher. Portfolio showcasing ML/Quant projects, skills and interactive Monte Carlo simulator." />
     <style>
-        /* Centralized Theme Variables */
-        :root {
-            --bg-color: #f8fafc;
-            --text-color: #1f2937;
-            --muted-text-color: #6b7280;
-            --header-bg: rgba(248, 250, 252, 0.8);
-            --card-bg: rgba(255, 255, 255, 0.6);
-            --card-border: rgba(0, 0, 0, 0.05);
-            --section-bg: #f9fafb;
-            --tag-bg: #e5e7eb;
-            --tag-text: #374151;
-            --accent-blue: #2563eb;
-            --accent-yellow: #facc15;
-            --contact-bg: #1f2937;
-            --contact-text: #ffffff;
-            --contact-hover-bg: #111827;
+        :root{
+            --bg-color:#f8fafc; --text-color:#1f2937; --muted:#6b7280; --accent-blue:#2563eb; --accent-yellow:#facc15;
         }
-
-        .dark {
-            --bg-color: #111827;
-            --text-color: #e5e7eb;
-            --muted-text-color: #9ca3af;
-            --header-bg: rgba(17, 24, 39, 0.8);
-            --card-bg: rgba(31, 41, 55, 0.5);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --section-bg: rgba(31, 41, 55, 0.5);
-            --tag-bg: #374151;
-            --tag-text: #d1d5db;
-            --accent-blue: #60a5fa;
-            --accent-yellow: #fde047;
-            --contact-bg: #e5e7eb;
-            --contact-text: #111827;
-            --contact-hover-bg: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Component Styles using Variables */
-        header { background-color: var(--header-bg); border-color: var(--card-border); }
-        .text-muted { color: var(--muted-text-color); }
-        .section-bg { background-color: var(--section-bg); }
-        .text-accent-blue { color: var(--accent-blue); }
-        .text-accent-yellow { color: var(--accent-yellow); }
-        .border-accent-yellow { border-color: var(--accent-yellow); }
-        .ring-bg { ring-color: var(--bg-color); }
-        .tag { background-color: var(--tag-bg); color: var(--tag-text); }
-        .contact-btn { background-color: var(--contact-bg); color: var(--contact-text); }
-        .contact-btn:hover { background-color: var(--contact-hover-bg); }
-        
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--card-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .glass-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
-        }
-        .dark .glass-card:hover { box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1); }
-        
-        #constellation-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-        
-        .typed-cursor { opacity: 1; animation: blink 0.7s infinite; color: var(--accent-yellow); }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        .reveal { transform: translateY(100px); opacity: 0; transition: 1s all ease; }
-        .reveal.active { transform: translateY(0); opacity: 1; }
-        
-        #scrollTopBtn { position: fixed; bottom: 20px; right: 20px; display: none; z-index: 100; transition: opacity 0.3s, visibility 0.3s; }
-        
-        .animated-logo {
-            font-weight: 700;
-            font-size: 1.75rem; 
-            background: linear-gradient(90deg, #facc15, #2563eb, #facc15, #2563eb);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-text 5s linear infinite;
-        }
-        @keyframes gradient-text { to { background-position: 300% center; } }
-
+        .dark{ --bg-color:#0b1220; --text-color:#e6eef8; --muted:#9aa6b2; --accent-blue:#60a5fa; --accent-yellow:#fde047; }
+        body{font-family:'Inter',sans-serif;background:var(--bg-color);color:var(--text-color);transition:.25s}
+        header{backdrop-filter: blur(6px); background: rgba(255,255,255,0.04); border-bottom:1px solid rgba(0,0,0,0.06)}
+        .text-muted{color:var(--muted)}
+        .animated-logo{font-weight:800;font-size:1.5rem;background:linear-gradient(90deg,var(--accent-yellow),var(--accent-blue));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad 6s linear infinite}
+        @keyframes grad{to{background-position:200% center}}
+        .glass-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px);padding:1.25rem;border-radius:.75rem}
+        .tag{background:rgba(255,255,255,0.02);padding:.35rem .65rem;border-radius:999px;font-weight:600;color:var(--muted);font-size:.85rem}
+        .typed-cursor{opacity:1;animation:blink .7s infinite;color:var(--accent-yellow)}
+        @keyframes blink{50%{opacity:0}}
+        #constellation-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+        .reveal{transform:translateY(40px);opacity:0;transition:all .7s ease}
+        .reveal.active{transform:none;opacity:1}
+        footer{border-top:1px solid rgba(0,0,0,0.06)}
+        /* simulator canvas */
+        #mc-canvas{width:100%;height:260px;border-radius:.5rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+        .control { display:flex; gap:.5rem; align-items:center; }
+        .control input[type="range"]{flex:1}
+        @media (min-width:1024px){ .hero-title{font-size:4.25rem;line-height:1} }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <header class="backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="animated-logo">Ojas</a>
-            <nav class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-muted hover:text-accent-blue transition duration-300">About</a>
-                <a href="#skills" class="text-muted hover:text-accent-blue transition duration-300">Skills</a>
-                <a href="#certs" class="text-muted hover:text-accent-blue transition duration-300">Certs</a>
-                <a href="#projects" class="text-muted hover:text-accent-blue transition duration-300">Projects</a>
-                <a href="#experience" class="text-muted hover:text-accent-blue transition duration-300">Experience</a>
-                <a href="#contact" class="contact-btn font-medium py-2 px-4 rounded-lg transition duration-300">Contact</a>
-                <button id="theme-toggle" type="button" class="ml-4 text-muted hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm p-2.5">
-                    <i id="theme-toggle-dark-icon" class="hidden w-5 h-5" data-lucide="moon"></i>
-                    <i id="theme-toggle-light-icon" class="hidden w-5 h-5" data-lucide="sun"></i>
-                </button>
-            </nav>
-            <button id="mobile-menu-button" class="md:hidden text-muted">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+<header class="fixed w-full z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="animated-logo">Ojas</a>
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#about" class="text-muted hover:text-accent-blue transition">About</a>
+      <a href="#skills" class="text-muted hover:text-accent-blue transition">Skills</a>
+      <a href="#certs" class="text-muted hover:text-accent-blue transition">Certs</a>
+      <a href="#projects" class="text-muted hover:text-accent-blue transition">Projects</a>
+      <a href="#simulator" class="text-muted hover:text-accent-blue transition">Simulator</a>
+      <a href="#contact" class="bg-black/70 text-white px-3 py-1 rounded-md hover:opacity-90 transition">Contact</a>
+      <a href="resume.pdf" download class="ml-2 border border-white/10 px-3 py-1 rounded-md text-sm hover:bg-white/5 transition">Download Resume</a>
+    </nav>
+    <div class="md:hidden flex items-center gap-2">
+      <a href="resume.pdf" download class="text-muted mr-2"><i data-lucide="download" class="w-6 h-6"></i></a>
+      <button id="mobile-toggle" class="text-muted"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+    <a href="#about" class="block">About</a>
+    <a href="#skills" class="block">Skills</a>
+    <a href="#projects" class="block">Projects</a>
+    <a href="#simulator" class="block">Simulator</a>
+  </div>
+</header>
+
+<main class="container mx-auto px-6">
+
+  <!-- HERO -->
+  <section id="home" class="min-h-screen flex items-center justify-center text-center relative">
+    <canvas id="constellation-canvas"></canvas>
+    <div class="max-w-4xl z-10">
+      <h1 class="hero-title text-3xl md:text-5xl lg:text-6xl font-black mb-4">Hi, I'm Ojas Sameer Raverkar</h1>
+      <h2 class="text-2xl md:text-3xl font-semibold text-accent-yellow mb-6">
+        <span id="typed-text"></span><span class="typed-cursor">|</span>
+      </h2>
+      <p class="text-lg text-muted max-w-2xl mx-auto mb-8">
+        Mechanical Engineering student transitioning to Quantitative Research and AI — building time-series models, algorithmic strategies, and data-driven tools for finance.
+      </p>
+      <div class="flex justify-center gap-4 mb-6">
+        <a href="https://github.com/ojasraverkar" target="_blank" class="text-muted hover:text-accent-blue"><i data-lucide="github" class="w-7 h-7"></i></a>
+        <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-muted hover:text-accent-blue"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+        <a href="mailto:ojas12062006@gmail.com" class="text-muted hover:text-accent-blue"><i data-lucide="mail" class="w-7 h-7"></i></a>
+      </div>
+
+      <div class="flex justify-center gap-3">
+        <a href="#projects" class="px-5 py-3 rounded-md bg-white/6 font-medium hover:scale-[1.02] transition">View Projects</a>
+        <a href="resume.pdf" download class="px-5 py-3 rounded-md border border-white/10 hover:bg-white/6 transition">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 lg:py-28 reveal">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-5xl mx-auto">
+      <div class="md:col-span-2 text-center md:text-left">
+        <img src="https://raw.githubusercontent.com/ojasraverkar/ojasraverkar.github.io/main/profile.jpg" alt="Ojas Raverkar" class="rounded-2xl shadow-xl mx-auto w-64 h-64 md:w-full md:h-auto object-cover">
+      </div>
+      <div class="md:col-span-3">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-muted mb-4">
+          Second-year B.Tech Mechanical Engineering student at VIT, minoring in AI/ML. I focus on time-series modelling, statistical analysis, and building algorithmic strategies with production-minded code.
+        </p>
+        <p class="text-muted mb-6">
+          My objective: become a Quantitative Researcher — building robust, explainable models that trade or extract signals from market data. I balance engineering discipline with applied math and software practices.
+        </p>
+
+        <div class="flex gap-4">
+          <div class="glass-card flex-1 text-center">
+            <h4 class="text-2xl font-bold">B.Tech</h4>
+            <p class="text-sm text-muted">VIT, Vellore</p>
+          </div>
+          <div class="glass-card flex-1 text-center">
+            <h4 class="text-2xl font-bold text-accent-blue">AI / ML</h4>
+            <p class="text-sm text-muted">Minor Degree</p>
+          </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-             <a href="#about" class="block py-2 px-4 text-sm text-muted hover:text-accent-blue">About</a>
-             <a href="#skills" class="block py-2 px-4 text-sm text-muted hover:text-accent-blue">Skills</a>
-             <a href="#certs" class="block py-2 px-4 text-sm text-muted hover:text-accent-blue">Certs</a>
-             <a href="#projects" class="block py-2 px-4 text-sm text-muted hover:text-accent-blue">Projects</a>
-             <a href="#experience" class="block py-2 px-4 text-sm text-muted hover:text-accent-blue">Experience</a>
+
+        <div class="mt-6">
+          <h4 class="font-semibold mb-2">Currently working on</h4>
+          <div class="flex gap-2 flex-wrap">
+            <span class="tag">Market Regime Detection (ML)</span>
+            <span class="tag">Time-Series Feature Engineering</span>
+            <span class="tag">Backtesting Framework</span>
+            <span class="tag">Algorithmic Execution (Kite Connect)</span>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <main class="container mx-auto px-6">
-
-        <section id="home" class="min-h-screen flex items-center justify-center text-center relative">
-            <canvas id="constellation-canvas"></canvas>
-            <div class="max-w-4xl z-10">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-4">
-                    Hi, I'm Ojas Sameer Raverkar
-                </h1>
-                <h2 class="text-2xl md:text-3xl font-semibold text-accent-yellow mb-8">
-                    <span id="typed-text"></span><span class="typed-cursor">|</span>
-                </h2>
-                <p class="text-lg text-muted max-w-2xl mx-auto mb-10">
-                    A Mechanical Engineering student passionate about applying AI and quantitative analysis to solve complex problems in financial markets.
-                </p>
-                <div class="flex justify-center items-center space-x-6">
-                    <a href="https://github.com/ojasraverkar" target="_blank" class="text-muted hover:text-accent-blue transition duration-300"><i data-lucide="github" class="w-8 h-8"></i></a>
-                    <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-muted hover:text-accent-blue transition duration-300"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
-                    <a href="mailto:ojas12062006@gmail.com" class="text-muted hover:text-accent-blue transition duration-300"><i data-lucide="mail" class="w-8 h-8"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-20 lg:py-32 reveal">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-5xl mx-auto">
-                <div class="md:col-span-2">
-                    <img src="https://raw.githubusercontent.com/ojasraverkar/ojasraverkar.github.io/main/profile.jpg" alt="Ojas Raverkar Profile Picture" class="rounded-2xl shadow-xl mx-auto w-64 h-64 md:w-full md:h-auto object-cover transform transition duration-500 hover:scale-105">
-                </div>
-                <div class="md:col-span-3 text-center md:text-left">
-                     <h2 class="text-3xl font-bold mb-4">About Me</h2>
-                     <p class="text-muted mb-4">
-                         I'm a second-year B.Tech Mechanical Engineering student at VIT, minoring in AI & Machine Learning. I am driven by a fascination with financial markets and a passion for using mathematical models and machine learning to find signals in the noise.
-                     </p>
-                     <p class="text-muted mb-8">
-                         My objective is to build a career as a Quantitative Researcher or Investment Manager. I am actively developing my skills in statistical analysis, algorithmic trading, and computational finance to create innovative, data-driven solutions in the FinTech space.
-                     </p>
-                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                         <div class="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg flex-1 min-w-[150px] text-center">
-                             <h4 class="text-2xl font-bold">B.Tech</h4>
-                             <p class="text-sm text-muted">VIT, Vellore</p>
-                         </div>
-                         <div class="bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-4 rounded-lg flex-1 min-w-[150px] text-center">
-                             <h4 class="text-accent-blue text-2xl font-bold">AI/ML</h4>
-                             <p class="text-sm text-muted">Minor Degree</p>
-                         </div>
-                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20 lg:py-32 reveal section-bg rounded-3xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Technical Toolkit</h2>
-                <p class="text-muted mt-2">The languages, tools, and skills I use to build things.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card p-6 rounded-lg lg:col-span-3">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="trending-up" class="w-8 h-8 text-accent-yellow"></i><h3 class="text-xl font-semibold">Financial & Quantitative Skills</h3></div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Algorithmic Trading</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Quantitative Analysis</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Financial Modeling</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Monte Carlo Simulation</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Technical & Fundamental Analysis</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">API Integration (Kite Connect)</span>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="code-2" class="w-8 h-8 text-accent-blue"></i><h3 class="text-xl font-semibold">Programming Languages</h3></div>
-                    <div class="flex flex-wrap gap-2">
-                         <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Python (Proficient)</span>
-                         <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">C++ (Intermediate)</span>
-                         <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Java (Intermediate)</span>
-                         <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">HTML (Beginner)</span>
-                         <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Matlab (Beginner)</span>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="pencil-ruler" class="w-8 h-8 text-accent-yellow"></i><h3 class="text-xl font-semibold">Engineering Design</h3></div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Inventor</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Solidworks</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">AutoCAD</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4"><i data-lucide="database" class="w-8 h-8 text-accent-blue"></i><h3 class="text-xl font-semibold">Databases</h3></div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">MySQL</span>
-                        <span class="tag inline-block text-sm font-medium px-3 py-1 rounded-full">MongoDB</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="certs" class="py-20 lg:py-32 reveal">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Certifications & Coursework</h2>
-                <p class="text-muted mt-2">My commitment to continuous learning.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="glass-card p-6 rounded-lg flex items-start gap-4">
-                    <i data-lucide="award" class="w-10 h-10 text-accent-blue mt-1 flex-shrink-0"></i>
-                    <div>
-                        <h3 class="text-lg font-semibold">Financial Markets</h3>
-                        <p class="text-accent-blue text-sm">Yale University (via Coursera)</p>
-                    </div>
-                </div>
-                <div class="glass-card p-6 rounded-lg flex items-start gap-4">
-                    <i data-lucide="award" class="w-10 h-10 text-accent-yellow mt-1 flex-shrink-0"></i>
-                    <div>
-                        <h3 class="text-lg font-semibold">Mathematics for Machine Learning</h3>
-                        <p class="text-accent-yellow text-sm">Specialization (via Coursera)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-20 lg:py-32 reveal section-bg rounded-3xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">My Projects</h2>
-                <p class="text-muted mt-2">Applying theory to build practical solutions.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card rounded-lg overflow-hidden flex flex-col">
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Portfolio Optimization</h3>
-                        <p class="text-muted text-sm mb-4">Developed a model to find the optimal risk-return tradeoff for a portfolio of assets.</p>
-                    </div>
-                    <div class="p-4 bg-gray-100/50 dark:bg-gray-900/50 mt-auto">
-                        <a href="https://github.com/ojasraverkar" target="_blank" class="text-accent-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">View on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                    </div>
-                </div>
-                <div class="glass-card rounded-lg overflow-hidden flex flex-col">
-                     <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Financial Sentiment Analysis</h3>
-                        <p class="text-muted text-sm mb-4">Built a sentiment analysis model using a fine-tuned FinBERT transformer on a custom-labeled dataset.</p>
-                    </div>
-                    <div class="p-4 bg-gray-100/50 dark:bg-gray-900/50 mt-auto">
-                        <a href="https://github.com/ojasraverkar" target="_blank" class="text-accent-yellow font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">View on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                    </div>
-                </div>
-                <div class="glass-card rounded-lg overflow-hidden flex flex-col">
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Automated Trading Bot</h3>
-                        <p class="text-muted text-sm mb-4">Engineered a Python-based trading system using the Kite Connect API for real-time execution.</p>
-                    </div>
-                    <div class="p-4 bg-gray-100/50 dark:bg-gray-900/50 mt-auto">
-                         <a href="https://github.com/ojasraverkar" target="_blank" class="text-accent-blue font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">View on GitHub <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="py-20 lg:py-32 reveal">
-             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Professional Experience</h2>
-                <p class="text-muted mt-2">My professional journey so far.</p>
-            </div>
-            <div class="relative border-l-2 border-accent-yellow ml-6 max-w-2xl mx-auto">
-                <div class="mb-10 ml-10">
-                    <span class="absolute flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full -left-4 ring-8 ring-bg"><i data-lucide="briefcase" class="w-5 h-5 text-gray-800"></i></span>
-                    <h3 class="flex items-center mb-1 text-lg font-semibold">Summer Intern @ SIDTECH Engineering</h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-accent-yellow">May 2025 - June 2025</time>
-                    <ul class="mb-4 text-base font-normal text-muted list-disc pl-5 space-y-2">
-                        <li>Designed and developed components for Special Purpose Machines (SPM).</li>
-                        <li>Participated in end-to-end project execution for machinery.</li>
-                        <li>Collaborated with cross-functional teams to streamline workflows.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 lg:py-32 text-center reveal section-bg rounded-3xl">
-             <h2 class="text-3xl font-bold">Get In Touch</h2>
-             <p class="text-muted mt-4 max-w-xl mx-auto">
-                 I'm actively seeking quantitative research and trading internships. If you're looking for a dedicated and analytical team member, I'd love to connect. My inbox is always open!
-             </p>
-             <div class="mt-8">
-                 <a href="mailto:ojas12062006@gmail.com" class="inline-block bg-blue-600 text-white font-medium text-lg px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg shadow-blue-500/20">Say Hello</a>
-             </div>
-        </section>
-    </main>
-    
-    <footer class="bg-gray-100 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800 mt-20">
-        <div class="container mx-auto px-6 py-6 text-center text-muted">
-            <div class="flex justify-center items-center space-x-6 mb-4">
-                <a href="https://github.com/ojasraverkar" target="_blank" class="text-muted hover:text-accent-blue transition duration-300"><i data-lucide="github" class="w-6 h-6"></i></a>
-                <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank" class="text-muted hover:text-accent-blue transition duration-300"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                <a href="mailto:ojas12062006@gmail.com" class="text-muted hover:text-accent-blue transition duration-300"><i data-lucide="mail" class="w-6 h-6"></i></a>
-            </div>
-            <p>&copy; <span id="year"></span> Ojas Sameer Raverkar. All rights reserved.</p>
+  <!-- SKILLS -->
+  <section id="skills" class="py-20 lg:py-28 reveal">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold">Technical Toolkit</h2>
+      <p class="text-muted mt-2">Languages, libraries and quant tools I use.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="glass-card">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="trending-up" class="w-7 h-7 text-accent-yellow"></i><h3 class="text-lg font-semibold">Financial & Quant</h3></div>
+        <div class="flex gap-2 flex-wrap">
+          <span class="tag">Algorithmic Trading</span>
+          <span class="tag">Factor Modelling</span>
+          <span class="tag">Monte Carlo Simulation</span>
+          <span class="tag">Risk Metrics (Sharpe, DD)</span>
+          <span class="tag">Stochastic Processes (GBM)</span>
         </div>
-    </footer>
-    
-    <button id="scrollTopBtn" onclick="scrollToTop()" class="bg-blue-600 text-white rounded-full p-3 hover:bg-blue-700 transition duration-300 shadow-lg">
-        <i data-lucide="arrow-up" class="w-6 h-6"></i>
-    </button>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // --- Element Declarations ---
-            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const typedTextSpan = document.getElementById("typed-text");
-            const reveals = document.querySelectorAll(".reveal");
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            const canvas = document.getElementById('constellation-canvas');
-            const ctx = canvas.getContext('2d');
-            let particlesArray;
-            let mouse = { x: null, y: null };
+      </div>
+      <div class="glass-card">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="code" class="w-7 h-7 text-accent-blue"></i><h3 class="text-lg font-semibold">Programming</h3></div>
+        <div class="flex gap-2 flex-wrap">
+          <span class="tag">Python (pandas, numpy)</span>
+          <span class="tag">PyTorch / scikit-learn</span>
+          <span class="tag">SQL</span>
+          <span class="tag">C++ (intermediate)</span>
+          <span class="tag">Backtesting (custom)</span>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="flex items-center gap-3 mb-4"><i data-lucide="database" class="w-7 h-7 text-accent-blue"></i><h3 class="text-lg font-semibold">Tools</h3></div>
+        <div class="flex gap-2 flex-wrap">
+          <span class="tag">Kite Connect / APIs</span>
+          <span class="tag">Matplotlib / Plotly</span>
+          <span class="tag">CVXPY / Optimization</span>
+          <span class="tag">Git / Docker (basic)</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // --- Mouse Listener ---
-            window.addEventListener('mousemove', function(event) {
-                mouse.x = event.clientX;
-                mouse.y = event.clientY;
-            });
-            window.addEventListener('mouseout', function() {
-                mouse.x = null;
-                mouse.y = null;
-            });
+  <!-- CERTS -->
+  <section id="certs" class="py-20 lg:py-28 reveal">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold">Certifications & Coursework</h2>
+      <p class="text-muted mt-2">Selected courses that support my quant path.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="glass-card flex items-start gap-4">
+        <i data-lucide="award" class="w-9 h-9 text-accent-blue mt-1"></i>
+        <div>
+          <h3 class="text-lg font-semibold">Financial Markets</h3>
+          <p class="text-sm text-accent-blue">Yale University (Coursera)</p>
+        </div>
+      </div>
+      <div class="glass-card flex items-start gap-4">
+        <i data-lucide="award" class="w-9 h-9 text-accent-yellow mt-1"></i>
+        <div>
+          <h3 class="text-lg font-semibold">Mathematics for Machine Learning</h3>
+          <p class="text-sm text-accent-yellow">Specialization (Coursera)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 lg:py-28 reveal">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold">My Projects</h2>
+      <p class="text-muted mt-2">Applied projects showing technical approach and tools (no claims beyond what's implemented).</p>
+    </div>
 
-            function applyTheme(theme) {
-                if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    themeToggleLightIcon.classList.remove('hidden');
-                    themeToggleDarkIcon.classList.add('hidden');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    themeToggleDarkIcon.classList.remove('hidden');
-                    themeToggleLightIcon.classList.add('hidden');
-                }
-                if (typeof init === 'function') init();
-            }
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Card 1 -->
+      <div class="glass-card flex flex-col">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold">Portfolio Optimization</h3>
+          <p class="text-muted text-sm mt-2">Developed an optimizer to balance risk-return using mean-variance and constraints.</p>
+        </div>
+        <div class="mt-auto pt-4 border-t border-white/6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="tag">Python</span>
+            <span class="tag">pandas</span>
+            <span class="tag">cvxopt</span>
+            <span class="tag">numpy</span>
+          </div>
+          <a href="https://github.com/ojasraverkar" target="_blank" class="text-accent-blue font-semibold">View on GitHub →</a>
+        </div>
+      </div>
 
-            themeToggleBtn.addEventListener('click', function() {
-                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-                localStorage.setItem('color-theme', newTheme);
-                applyTheme(newTheme);
-            });
-            
-            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+      <!-- Card 2 -->
+      <div class="glass-card flex flex-col">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold">Financial Sentiment Analysis</h3>
+          <p class="text-muted text-sm mt-2">Fine-tuned a transformer on finance headlines to classify sentiment; focus was data pipeline and model training.</p>
+        </div>
+        <div class="mt-auto pt-4 border-t border-white/6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="tag">Python</span>
+            <span class="tag">transformers</span>
+            <span class="tag">HuggingFace</span>
+          </div>
+          <a href="https://github.com/ojasraverkar" target="_blank" class="text-accent-yellow font-semibold">View on GitHub →</a>
+        </div>
+      </div>
 
-            const textArray = ["Aspiring Quant Researcher", "AI & ML Enthusiast", "Algorithmic Trader", "Mechanical Engineer"];
-            const typeSpeed = 100, eraseSpeed = 50, newTextDelay = 2000;
-            let textArrayIndex = 0, charIndex = 0;
-            function type() {
-                if (!typedTextSpan) return;
-                if (charIndex < textArray[textArrayIndex].length) {
-                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex++);
-                    setTimeout(type, typeSpeed);
-                } else { setTimeout(erase, newTextDelay); }
-            }
-            function erase() {
-                if (!typedTextSpan) return;
-                if (charIndex > 0) {
-                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, --charIndex);
-                    setTimeout(erase, eraseSpeed);
-                } else {
-                    textArrayIndex = (textArrayIndex + 1) % textArray.length;
-                    setTimeout(type, typeSpeed + 1100);
-                }
-            }
-            
-            function revealElements() {
-                reveals.forEach(el => {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = el.getBoundingClientRect().top;
-                    const elementVisible = 150;
-                    el.classList.toggle("active", elementTop < windowHeight - elementVisible);
-                });
-            }
-            window.addEventListener("scroll", revealElements);
+      <!-- Card 3 -->
+      <div class="glass-card flex flex-col">
+        <div class="mb-4">
+          <h3 class="text-xl font-bold">Automated Trading Bot</h3>
+          <p class="text-muted text-sm mt-2">A Python system that connects to Kite Connect for order execution and uses simple signal logic.</p>
+        </div>
+        <div class="mt-auto pt-4 border-t border-white/6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="tag">Kite Connect</span>
+            <span class="tag">Python</span>
+            <span class="tag">Backtesting</span>
+          </div>
+          <a href="https://github.com/ojasraverkar" target="_blank" class="text-accent-blue font-semibold">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            window.onscroll = function() {
-                if (scrollTopBtn && (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)) {
-                    scrollTopBtn.style.display = "block";
-                } else if (scrollTopBtn) {
-                    scrollTopBtn.style.display = "none";
-                }
-            };
-            function scrollToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
-            if(scrollTopBtn) scrollTopBtn.addEventListener('click', scrollToTop);
+  <!-- INTERACTIVE SIMULATOR -->
+  <section id="simulator" class="py-16 lg:py-24 reveal section-bg rounded-xl">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold">Interactive — Monte Carlo Price Paths</h2>
+        <p class="text-muted mt-2">A simple Monte Carlo simulator to visualize how drift & volatility affect price paths. Useful quick intuition for time-series behavior.</p>
+      </div>
 
-            function init() {
-                if (!canvas) return;
-                canvas.width = window.innerWidth;
-                const heroSection = document.getElementById('home');
-                if (heroSection) {
-                    canvas.height = heroSection.offsetHeight;
-                } else {
-                    canvas.height = window.innerHeight;
-                }
-                particlesArray = [];
-                let numberOfParticles = (canvas.height * canvas.width) / 9000;
-                for (let i=0; i < numberOfParticles; i++) {
-                    let size = (Math.random() * 2) + 1;
-                    let x = Math.random() * (innerWidth - size * 2) + size * 2;
-                    let y = Math.random() * (innerHeight - size * 2) + size * 2;
-                    let directionX = (Math.random() * .4) - 0.2;
-                    let directionY = (Math.random() * .4) - 0.2;
-                    particlesArray.push(new Particle(x, y, directionX, directionY, size));
-                }
-            }
-        
-            class Particle {
-                 constructor(x, y, directionX, directionY, size) {
-                    this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                    ctx.fillStyle = document.documentElement.classList.contains('dark') ? '#9ca3af' : '#6b7280';
-                    ctx.fill();
-                }
-                update() {
-                    if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
-                    if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-                    
-                    // NEW: Mouse Repulsion Logic
-                    let dx = this.x - mouse.x;
-                    let dy = this.y - mouse.y;
-                    let distance = Math.hypot(dx, dy);
-                    let mouseRadius = 150;
+      <div class="glass-card">
+        <canvas id="mc-canvas"></canvas>
 
-                    if (mouse.x && mouse.y && distance < mouseRadius) {
-                        const forceDirectionX = dx / distance;
-                        const forceDirectionY = dy / distance;
-                        const force = (mouseRadius - distance) / mouseRadius;
-                        const moveX = forceDirectionX * force * 2;
-                        const moveY = forceDirectionY * force * 2;
-                        
-                        this.x += moveX;
-                        this.y += moveY;
-                    }
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-muted">Drift (μ)</label>
+            <div class="control mt-1"><input id="drift" type="range" min="-0.5" max="0.5" step="0.01" value="0.05"><span id="driftVal" class="ml-2 font-semibold">0.05</span></div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted">Volatility (σ)</label>
+            <div class="control mt-1"><input id="vol" type="range" min="0.01" max="1.0" step="0.01" value="0.2"><span id="volVal" class="ml-2 font-semibold">0.20</span></div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted">Steps</label>
+            <div class="control mt-1"><input id="steps" type="range" min="50" max="1000" step="10" value="250"><span id="stepsVal" class="ml-2 font-semibold">250</span></div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted">Simulations</label>
+            <div class="control mt-1"><input id="sims" type="range" min="1" max="50" step="1" value="10"><span id="simsVal" class="ml-2 font-semibold">10</span></div>
+          </div>
+        </div>
 
-                    this.x += this.directionX;
-                    this.y += this.directionY;
-                    this.draw();
-                }
-            }
+        <div class="mt-4 flex gap-3">
+          <button id="runSim" class="px-4 py-2 bg-accent-blue text-white rounded-md">Run</button>
+          <button id="resetSim" class="px-4 py-2 border rounded-md">Reset</button>
+          <p class="text-sm text-muted ml-auto">Tip: drag your cursor over the canvas on desktop to see coordinates.</p>
+        </div>
 
-            function animate() {
-                if(!particlesArray) return;
-                requestAnimationFrame(animate);
-                ctx.clearRect(0,0,innerWidth, innerHeight);
-                particlesArray.forEach(p => p.update());
-                connect();
-            }
+        <p class="text-xs text-muted mt-3">Implementation: Geometric Brownian Motion with Euler discretization. Educational only.</p>
+      </div>
+    </div>
+  </section>
 
-            function connect(){
-                const isDarkMode = document.documentElement.classList.contains('dark');
-                let opacityValue = 1;
-                for (let a = 0; a < particlesArray.length; a++) {
-                    for (let b = a; b < particlesArray.length; b++) {
-                        let distance = Math.hypot(particlesArray[a].x - particlesArray[b].x, particlesArray[a].y - particlesArray[b].y);
-                        if (distance < (canvas.width/10)) {
-                            opacityValue = 1 - (distance/150);
-                            ctx.strokeStyle = isDarkMode ? `rgba(96, 165, 250, ${opacityValue})` : `rgba(37, 99, 235, ${opacityValue})`;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-                
-                // NEW: Connect particles to mouse cursor
-                if (mouse.x && mouse.y) {
-                    for (let i = 0; i < particlesArray.length; i++) {
-                        let distance = Math.hypot(particlesArray[i].x - mouse.x, particlesArray[i].y - mouse.y);
-                        let connectRadius = 250;
-                        if (distance < connectRadius) {
-                            opacityValue = 1 - (distance / connectRadius);
-                            ctx.strokeStyle = isDarkMode ? `rgba(253, 224, 71, ${opacityValue})` : `rgba(250, 204, 21, ${opacityValue})`;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                            ctx.lineTo(mouse.x, mouse.y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-            
-            // --- Initial Calls ---
-            lucide.createIcons();
-            
-            const savedTheme = localStorage.getItem('color-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            applyTheme(savedTheme);
+  <!-- EXPERIENCE -->
+  <section id="experience" class="py-20 lg:py-28 reveal">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold">Professional Experience</h2>
+      <p class="text-muted mt-2">Practical engineering & project work.</p>
+    </div>
 
-            if(textArray.length) setTimeout(type, 1500);
-            
-            revealElements();
+    <div class="max-w-3xl mx-auto">
+      <div class="relative border-l-2 border-accent-yellow pl-6">
+        <div class="mb-8">
+          <span class="absolute -left-5 w-8 h-8 rounded-full bg-accent-yellow flex items-center justify-center text-black"><i data-lucide="briefcase" class="w-4 h-4"></i></span>
+          <h3 class="text-lg font-semibold">Summer Intern — SIDTECH Engineering</h3>
+          <time class="block text-sm text-accent-yellow mb-2">May 2025 - June 2025</time>
+          <ul class="text-muted list-disc pl-5 space-y-2">
+            <li>Designed components for special-purpose machinery and participated in assembly/testing.</li>
+            <li>Worked cross-functionally to bring mechanical designs to production-readiness.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            document.getElementById('year').textContent = new Date().getFullYear();
-            
-            window.addEventListener('resize', init);
-            animate();
-        });
-    </script>
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 lg:py-28 reveal text-center">
+    <h2 class="text-3xl font-bold">Get in touch</h2>
+    <p class="text-muted mt-3 max-w-xl mx-auto">I'm actively seeking quant/research internships. If you want to collaborate or hire an intern, let's talk.</p>
+    <div class="mt-6">
+      <a href="mailto:ojas12062006@gmail.com" class="px-6 py-3 rounded-md bg-accent-blue text-white">Say hello</a>
+      <a href="resume.pdf" download class="ml-3 px-4 py-3 rounded-md border">Download Resume</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="py-8 mt-12">
+  <div class="container mx-auto px-6 text-center text-muted">
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="https://github.com/ojasraverkar" target="_blank"><i data-lucide="github" class="w-6 h-6"></i></a>
+      <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+      <a href="mailto:ojas12062006@gmail.com"><i data-lucide="mail" class="w-6 h-6"></i></a>
+    </div>
+    <p>&copy; <span id="year"></span> Ojas Sameer Raverkar</p>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+document.addEventListener('DOMContentLoaded', ()=> {
+  // lucide icons
+  lucide.createIcons();
+
+  // small DOM
+  const typedTextSpan = document.getElementById("typed-text");
+  const textArray = ["Aspiring Quant Researcher", "AI & ML Enthusiast", "Algorithmic Trader", "Mechanical Engineer"];
+  let textArrayIndex=0,charIndex=0, typeSpeed=80, eraseSpeed=40, newTextDelay=1700;
+  function type(){ if(charIndex < textArray[textArrayIndex].length){ typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex++); setTimeout(type,typeSpeed);} else setTimeout(erase,newTextDelay)}
+  function erase(){ if(charIndex>0){ typedTextSpan.textContent = textArray[textArrayIndex].substring(0,--charIndex); setTimeout(erase,eraseSpeed);} else { textArrayIndex=(textArrayIndex+1)%textArray.length; setTimeout(type, 400); } }
+  setTimeout(type,900);
+
+  // mobile toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if(mobileToggle) mobileToggle.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+  // reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  function reveal(){ reveals.forEach(el=>{ const top=el.getBoundingClientRect().top, vh=window.innerHeight; if(top < vh-100) el.classList.add('active'); }) }
+  reveal(); window.addEventListener('scroll', reveal);
+
+  // set year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------------------------
+  // Constellation canvas (kept and slightly simplified)
+  // ---------------------------
+  const canvas = document.getElementById('constellation-canvas');
+  const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
+  let particles = [], mouse={x:null,y:null};
+  function resizeConst(){ if(!canvas) return; canvas.width = window.innerWidth; const hero = document.getElementById('home'); canvas.height = hero ? hero.offsetHeight : window.innerHeight; initParticles(); }
+  window.addEventListener('resize', resizeConst);
+  window.addEventListener('mousemove', (e)=>{mouse.x=e.clientX; mouse.y=e.clientY});
+  window.addEventListener('mouseout', ()=>{mouse.x=null; mouse.y=null});
+
+  function initParticles(){
+    if(!ctx) return;
+    particles = [];
+    const count = Math.max(40, Math.floor((canvas.width*canvas.height)/90000));
+    for(let i=0;i<count;i++){ const size = Math.random()*1.6+0.8; particles.push({
+      x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+      vx: (Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4, size
+    });}
+  }
+  function drawConst(){
+    if(!ctx) return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const dark = document.documentElement.classList.contains('dark');
+    particles.forEach(p=>{
+      // move
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0||p.x>canvas.width) p.vx *= -1;
+      if(p.y<0||p.y>canvas.height) p.vy *= -1;
+      // mouse repulse
+      if(mouse.x && mouse.y){
+        const dx = p.x-mouse.x, dy = p.y-mouse.y, d = Math.hypot(dx,dy);
+        if(d < 120){ p.x += (dx/d)*((120-d)/30); p.y += (dy/d)*((120-d)/30); }
+      }
+      // draw
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fillStyle = dark ? '#9aa6b2' : '#6b7280'; ctx.fill();
+    });
+    // connect
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const d = Math.hypot(particles[i].x-particles[j].x, particles[i].y-particles[j].y);
+        if(d < 120){
+          const op = 1 - d/120;
+          ctx.strokeStyle = dark ? `rgba(96,165,250,${op*0.9})` : `rgba(37,99,235,${op*0.9})`;
+          ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(drawConst);
+  }
+  resizeConst(); drawConst();
+
+  // ---------------------------
+  // Monte Carlo Simulator (interactive)
+  // ---------------------------
+  const mcCanvas = document.getElementById('mc-canvas');
+  const mcCtx = mcCanvas && mcCanvas.getContext ? mcCanvas.getContext('2d') : null;
+  function fitMCCanvas(){ if(!mcCanvas) return; mcCanvas.width = mcCanvas.clientWidth * devicePixelRatio; mcCanvas.height = mcCanvas.clientHeight * devicePixelRatio; mcCtx && mcCtx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+  fitMCCanvas(); window.addEventListener('resize', fitMCCanvas);
+
+  const driftEl = document.getElementById('drift'), volEl = document.getElementById('vol'), stepsEl = document.getElementById('steps'), simsEl = document.getElementById('sims');
+  const driftVal = document.getElementById('driftVal'), volVal = document.getElementById('volVal'), stepsVal = document.getElementById('stepsVal'), simsVal = document.getElementById('simsVal');
+  const runBtn = document.getElementById('runSim'), resetBtn = document.getElementById('resetSim');
+
+  function updateLabels(){ driftVal.textContent = parseFloat(driftEl.value).toFixed(2); volVal.textContent = parseFloat(volEl.value).toFixed(2); stepsVal.textContent = stepsEl.value; simsVal.textContent = simsEl.value; }
+  [driftEl, volEl, stepsEl, simsEl].forEach(el=>el.addEventListener('input', updateLabels));
+  updateLabels();
+
+  function runMonteCarlo(){
+    if(!mcCtx) return;
+    const mu = parseFloat(driftEl.value), sigma = parseFloat(volEl.value), steps = parseInt(stepsEl.value), sims = parseInt(simsEl.value);
+    const S0 = 100;
+    // clear
+    mcCtx.clearRect(0,0,mcCanvas.width, mcCanvas.height);
+    const w = mcCanvas.clientWidth, h = mcCanvas.clientHeight;
+    // simulate
+    const allPaths = [];
+    for(let s=0;s<sims;s++){
+      let path=[S0];
+      for(let t=1;t<steps;t++){
+        const dt = 1/steps;
+        const z = randNormal();
+        const prev = path[path.length-1];
+        const next = prev * Math.exp((mu - 0.5*sigma*sigma)*dt + sigma*Math.sqrt(dt)*z);
+        path.push(next);
+      }
+      allPaths.push(path);
+    }
+    // scale and draw
+    const minVal = Math.min(...allPaths.flat()), maxVal = Math.max(...allPaths.flat());
+    // axes transform
+    function xPos(i){ return (i/(steps-1))* (w - 40) + 30; }
+    function yPos(val){ return (h - 30) - ((val - minVal) / (maxVal - minVal + 1e-9)) * (h - 60); }
+
+    // draw grid
+    mcCtx.strokeStyle = 'rgba(255,255,255,0.03)'; mcCtx.lineWidth = 1;
+    mcCtx.beginPath(); mcCtx.rect(0,0,w,h); mcCtx.stroke();
+
+    // draw paths
+    for(let s=0;s<allPaths.length;s++){
+      mcCtx.beginPath();
+      mcCtx.lineWidth = 1;
+      mcCtx.strokeStyle = `rgba(${sims>1? 60 : 96}, ${120}, ${200}, ${sims>1?0.6:0.95})`;
+      const p = allPaths[s];
+      for(let i=0;i<p.length;i++){
+        const x = xPos(i), y = yPos(p[i]);
+        if(i===0) mcCtx.moveTo(x,y); else mcCtx.lineTo(x,y);
+      }
+      mcCtx.stroke();
+    }
+
+    // draw legend & stats (mean terminal)
+    const terminals = allPaths.map(p => p[p.length-1]); const meanTerminal = (terminals.reduce((a,b)=>a+b,0)/terminals.length).toFixed(2);
+    mcCtx.fillStyle = 'rgba(255,255,255,0.9)'; mcCtx.font = '12px Inter';
+    mcCtx.fillText(`Mean terminal value: ${meanTerminal}`, 10, 14);
+  }
+
+  // Box-Muller for normal
+  function randNormal(){ let u=0,v=0; while(u===0) u=Math.random(); while(v===0) v=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
+
+  runBtn && runBtn.addEventListener('click', ()=>runMonteCarlo());
+  resetBtn && resetBtn.addEventListener('click', ()=>{ driftEl.value = 0.05; volEl.value = 0.2; stepsEl.value = 250; simsEl.value = 10; updateLabels(); mcCtx && mcCtx.clearRect(0,0,mcCanvas.width, mcCanvas.height); });
+
+  // ensure canvas fit on interactive when shown
+  setTimeout(()=>{ fitMCCanvas(); }, 300);
+});
+</script>
 </body>
 </html>
-
-
