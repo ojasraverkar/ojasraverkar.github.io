@@ -1,106 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ojas Raverkar | Finance & Asset Management</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ojas Raverkar | Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <meta name="description"
-        content="Ojas Sameer Raverkar — Undergraduate focused on asset management, portfolio construction, risk management, and fundamental analysis. Seeking finance and asset management internships." />
+    <meta name="description"
+          content="Ojas Raverkar — Undergraduate focused on asset management, portfolio construction, risk management, and fundamental analysis. Seeking finance and asset management internships." />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    :root{
-      --bg:#f8fafc;
-      --text:#0f172a;
-      --muted:#475569;
-      --accent:#2563eb;
-      --card:rgba(255,255,255,0.78);
-    }
-    body{
-      font-family:'Inter',sans-serif;
-      background:linear-gradient(180deg,#f8fafc,#eef2ff);
-      color:var(--text);
-    }
-    .text-muted{color:var(--muted)}
-    .glass{
-      background:var(--card);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(15,23,42,.08);
-      border-radius:1rem;
-      padding:1.6rem;
-      transition:all .35s ease;
-    }
-    .glass:hover{
-      transform:translateY(-6px);
-      box-shadow:0 22px 45px rgba(15,23,42,.10);
-    }
-    .tag{
-      background:#e0e7ff;
-      color:#1e3a8a;
-      padding:.4rem .75rem;
-      border-radius:999px;
-      font-size:.85rem;
-      font-weight:600;
-    }
-    .reveal{
-      opacity:0;
-      transform:translateY(45px);
-      transition:all .85s ease;
-    }
-    .reveal.active{
-      opacity:1;
-      transform:none;
-    }
-    #constellation{
-      position:absolute;
-      inset:0;
-      z-index:0;
-    }
-  </style>
+    <style>
+        :root{
+            --bg-color:#f8fafc; --text-color:#1f2937; --muted:#6b7280; --accent-blue:#2563eb; --accent-yellow:#facc15;
+        }
+        body{font-family:'Inter',sans-serif;background:var(--bg-color);color:var(--text-color)}
+        header{backdrop-filter: blur(6px); background: rgba(255,255,255,0.04); border-bottom:1px solid rgba(0,0,0,0.06)}
+        .text-muted{color:var(--muted)}
+        .animated-logo{font-weight:800;font-size:1.5rem;background:linear-gradient(90deg,var(--accent-yellow),var(--accent-blue));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad 6s linear infinite}
+        @keyframes grad{to{background-position:200% center}}
+        .glass-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px);padding:1.25rem;border-radius:.75rem}
+        .tag{background:rgba(255,255,255,0.02);padding:.35rem .65rem;border-radius:999px;font-weight:600;color:var(--muted);font-size:.85rem}
+        #constellation-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+        .reveal{transform:translateY(40px);opacity:0;transition:all .7s ease}
+        .reveal.active{transform:none;opacity:1}
+    </style>
 </head>
 
 <body class="overflow-x-hidden">
 
-<!-- HEADER -->
-<header class="fixed w-full z-50 bg-white/70 backdrop-blur border-b">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-extrabold text-lg">Ojas Raverkar</span>
-    <nav class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#focus">Focus</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact" class="text-blue-600">Contact</a>
+<header class="fixed w-full z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="animated-logo">Ojas</a>
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#about" class="text-muted hover:text-accent-blue">About</a>
+      <a href="#skills" class="text-muted hover:text-accent-blue">Skills</a>
+      <a href="#certs" class="text-muted hover:text-accent-blue">Certs</a>
+      <a href="#projects" class="text-muted hover:text-accent-blue">Projects</a>
+      <a href="#contact" class="bg-black/70 text-white px-3 py-1 rounded-md">Contact</a>
+      <a href="resume.pdf" download class="ml-2 border px-3 py-1 rounded-md text-sm">Download Resume</a>
     </nav>
   </div>
 </header>
 
-<main class="max-w-6xl mx-auto px-6 pt-28 relative">
+<main class="container mx-auto px-6">
 
 <!-- HERO -->
-<section class="relative min-h-[90vh] flex items-center justify-center text-center reveal">
-  <canvas id="constellation"></canvas>
-
-  <div class="relative z-10 max-w-3xl">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-5">
-      Finance · Asset Management · Risk
+<section id="home" class="min-h-screen flex items-center justify-center text-center relative">
+  <canvas id="constellation-canvas"></canvas>
+  <div class="max-w-4xl z-10">
+    <h1 class="hero-title text-3xl md:text-5xl lg:text-6xl font-black mb-4">
+      Hi, I'm Ojas Sameer Raverkar
     </h1>
 
-    <p class="text-lg text-muted">
-      Second-year B.Tech Mechanical Engineering student (AI & ML minor) focused on
-      <strong>asset management, portfolio construction, risk analysis,</strong> and
-      <strong>fundamental investing</strong>.  
-      Actively seeking <strong>finance & asset-management internships</strong>.
+    <p class="text-lg text-muted max-w-2xl mx-auto mb-8">
+      Mechanical Engineering undergraduate with a growing focus on
+      <strong>asset management, portfolio construction, and risk-aware investing</strong>.
+      Interested in applying quantitative and analytical methods to
+      <strong>long-term capital allocation</strong>.
     </p>
 
-    <div class="flex justify-center gap-7 mt-8">
+    <div class="flex justify-center gap-4 mb-6">
       <a href="https://github.com/ojasraverkar" target="_blank"><i data-lucide="github"></i></a>
       <a href="https://www.linkedin.com/in/ojas-raverkar-9a245a301" target="_blank"><i data-lucide="linkedin"></i></a>
       <a href="mailto:ojas12062006@gmail.com"><i data-lucide="mail"></i></a>
@@ -110,44 +74,51 @@
 
 <!-- ABOUT -->
 <section id="about" class="py-20 reveal">
-  <h2 class="text-3xl font-bold mb-6">About Me</h2>
-  <p class="text-muted max-w-3xl">
-    I am an undergraduate at VIT Vellore pursuing Mechanical Engineering with a minor in
-    Artificial Intelligence and Machine Learning. My primary interest lies in applying
-    structured analytical thinking to <strong>investment decision-making</strong>,
-    <strong>risk management</strong>, and <strong>long-term capital allocation</strong>.
-    <br><br>
-    My work spans portfolio optimization, equity fundamental analysis, and financial
-    sentiment modeling, with a growing focus on institutional-style asset management.
-  </p>
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">About Me</h2>
+    <p class="text-muted mb-4">
+      Second-year B.Tech Mechanical Engineering student at VIT, minoring in AI/ML. My
+      primary interest lies in <strong>asset management, portfolio optimization, and
+      financial risk analysis</strong>, where I apply structured engineering and
+      statistical thinking to investment problems.
+    </p>
+    <p class="text-muted">
+      My objective is to build a strong foundation in
+      <strong>institutional-style investing</strong> and
+      <strong>risk-aware portfolio construction</strong>, combining quantitative
+      techniques and fundamental analysis. I am actively seeking finance and
+      asset-management–oriented internships.
+    </p>
+  </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="py-20 reveal">
-  <h2 class="text-3xl font-bold mb-10">Core Skills</h2>
+  <h2 class="text-3xl font-bold text-center mb-10">Technical Toolkit</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="glass">
+    <div class="glass-card">
       <h3 class="font-semibold mb-4">Asset Management & Risk</h3>
       <div class="flex flex-wrap gap-2">
-        <span class="tag">Portfolio Construction</span>
+        <span class="tag">Portfolio Optimization</span>
         <span class="tag">Risk–Return Analysis</span>
-        <span class="tag">Modern Portfolio Theory</span>
         <span class="tag">Monte Carlo Methods</span>
+        <span class="tag">Asset Allocation</span>
+        <span class="tag">Diversification & Drawdowns</span>
       </div>
     </div>
 
-    <div class="glass">
+    <div class="glass-card">
       <h3 class="font-semibold mb-4">Fundamental Analysis</h3>
       <div class="flex flex-wrap gap-2">
         <span class="tag">Financial Statements</span>
         <span class="tag">Ratio Analysis</span>
         <span class="tag">Sector Comparison</span>
-        <span class="tag">Fundamental Scoring Systems</span>
+        <span class="tag">Fundamental Scoring Models</span>
       </div>
     </div>
 
-    <div class="glass">
+    <div class="glass-card">
       <h3 class="font-semibold mb-4">Programming & Tools</h3>
       <div class="flex flex-wrap gap-2">
         <span class="tag">Python (pandas, numpy)</span>
@@ -156,141 +127,65 @@
         <span class="tag">Matplotlib</span>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- FOCUS -->
-<section id="focus" class="py-20 reveal">
-  <h2 class="text-3xl font-bold mb-8">Current Focus</h2>
-  <ul class="grid md:grid-cols-2 gap-6 text-muted">
-    <li class="glass">Rule-based fundamental scoring frameworks for equities</li>
-    <li class="glass">Diversification, drawdowns, and risk concentration</li>
-    <li class="glass">Asset allocation under uncertainty</li>
-    <li class="glass">Data-driven long-term investing</li>
-  </ul>
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="py-20 reveal">
-  <h2 class="text-3xl font-bold mb-10">Selected Projects</h2>
+  <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
 
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="glass">
-      <h3 class="font-semibold text-lg mb-2">Portfolio Optimization</h3>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+    <div class="glass-card">
+      <h3 class="text-xl font-bold mb-2">Portfolio Optimization</h3>
       <p class="text-muted text-sm">
-        Portfolio optimization using Monte Carlo simulations and Modern Portfolio Theory
-        to analyze diversification and risk–return tradeoffs.
+        Developed a portfolio optimization framework to study diversification,
+        risk–return tradeoffs, and allocation decisions using mean–variance
+        techniques and Monte Carlo analysis.
       </p>
     </div>
 
-    <div class="glass">
-      <h3 class="font-semibold text-lg mb-2">Fundamental Equity Scoring</h3>
+    <div class="glass-card">
+      <h3 class="text-xl font-bold mb-2">Fundamental Equity Scoring</h3>
       <p class="text-muted text-sm">
-        Designed a structured scoring system combining profitability, leverage,
-        growth, and valuation metrics.
+        Built a rule-based fundamental scoring system using profitability,
+        leverage, growth, and valuation metrics to comparatively evaluate equities.
       </p>
     </div>
 
-    <div class="glass">
-      <h3 class="font-semibold text-lg mb-2">Financial Sentiment Analysis</h3>
+    <div class="glass-card">
+      <h3 class="text-xl font-bold mb-2">Financial Sentiment Analysis</h3>
       <p class="text-muted text-sm">
-        FinBERT-based sentiment modeling on Indian financial news to support
+        Fine-tuned a transformer-based model on financial news headlines to support
         qualitative market assessment.
       </p>
     </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-24 text-center reveal">
-  <h2 class="text-3xl font-bold mb-4">Let’s Connect</h2>
+<section id="contact" class="py-20 reveal text-center">
+  <h2 class="text-3xl font-bold mb-4">Get in touch</h2>
   <p class="text-muted mb-6">
-    Open to finance, asset management, and research internship opportunities.
+    Actively seeking finance, asset management, and research internships.
   </p>
   <a href="mailto:ojas12062006@gmail.com"
-     class="px-8 py-3 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
-    Contact Me
+     class="px-6 py-3 rounded-md bg-accent-blue text-white">
+     Say hello
   </a>
 </section>
 
 </main>
 
-<footer class="text-center py-6 text-sm text-muted border-t">
+<footer class="py-8 mt-12 text-center text-muted">
   © <span id="year"></span> Ojas Sameer Raverkar
 </footer>
 
 <script>
   lucide.createIcons();
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Reveal animation
-  const reveals = document.querySelectorAll('.reveal');
-  const reveal = () => {
-    reveals.forEach(el=>{
-      if(el.getBoundingClientRect().top < window.innerHeight - 120){
-        el.classList.add('active');
-      }
-    });
-  };
-  window.addEventListener('scroll', reveal);
-  reveal();
-
-  // BOLD INTERACTIVE CONSTELLATION
-  const canvas = document.getElementById('constellation');
-  const ctx = canvas.getContext('2d');
-  let particles=[], mouse={x:null,y:null};
-
-  function resize(){
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    particles = Array.from({length:90},()=>({
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height,
-      vx:(Math.random()-.5)*0.5,
-      vy:(Math.random()-.5)*0.5
-    }));
-  }
-
-  window.addEventListener('mousemove',e=>{
-    mouse.x=e.clientX; mouse.y=e.clientY;
-  });
-  window.addEventListener('mouseleave',()=>{
-    mouse.x=null; mouse.y=null;
-  });
-
-  function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<0||p.x>canvas.width) p.vx*=-1;
-      if(p.y<0||p.y>canvas.height) p.vy*=-1;
-
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,2.4,0,Math.PI*2);
-      ctx.fillStyle='rgba(37,99,235,.9)';
-      ctx.fill();
-    });
-
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx=particles[i].x-particles[j].x;
-        const dy=particles[i].y-particles[j].y;
-        const dist=Math.hypot(dx,dy);
-        if(dist<140){
-          ctx.strokeStyle=`rgba(37,99,235,${1-dist/140})`;
-          ctx.lineWidth=1.2;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x,particles[i].y);
-          ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-
-  resize(); draw();
-  window.addEventListener('resize',resize);
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
